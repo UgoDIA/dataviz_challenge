@@ -14,18 +14,6 @@ def vp_elec(request):
             data.append({
                 'libelle_commune': row['libellé commune'],
                 'year_2022': int(row['2022']),
-                'year_2021': int(row['2021']),
-                'year_2020': int(row['2020']),
-                'year_2019': int(row['2019']),
-                'year_2018': int(row['2018']),
-                'year_2017': int(row['2017']),
-                'year_2016': int(row['2016']),
-                'year_2015': int(row['2015']),
-                'year_2014': int(row['2014']),
-                'year_2013': int(row['2013']),
-                'year_2012': int(row['2012']),
-                'year_2011': int(row['2011']),
-                'year_2010': int(row['2010']),
             })
 
     if libelle_commune:
