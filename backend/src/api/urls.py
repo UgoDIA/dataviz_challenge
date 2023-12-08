@@ -21,4 +21,5 @@ from api.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/vp_elec/', vp_elec ),
+    path('api/geo_json/', geo_json),
 ]
