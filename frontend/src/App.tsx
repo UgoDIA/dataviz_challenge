@@ -1,35 +1,19 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Switch, Match } from 'solid-js';
+import Home from './views/Home';
+import Navbar from './components/Navbar';
+
 
 function App() {
-  const [count, setCount] = createSignal(0)
+  // Récuperer le dernier elt de l'url
+  const page = window.location.pathname
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
-  )
+  return (<>
+    <Navbar />
+    <Switch fallback={<div>Page not found</div>}>
+      <Match when={ page == "/" }> <Home/></Match>
+    </Switch>
+  </>
+  );
 }
 
-export default App
+export default App;
