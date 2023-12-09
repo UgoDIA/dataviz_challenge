@@ -9,3 +9,8 @@ class vp_elec_serializers(serializers.Serializer):
 class prod_serializers(serializers.Serializer):
     year = serializers.IntegerField()
     value = serializers.IntegerField()
+    
+class conso_serializers(serializers.Serializer):
+    commune = serializers.CharField()
+    value = serializers.IntegerField()
+    year = serializers.IntegerField()
