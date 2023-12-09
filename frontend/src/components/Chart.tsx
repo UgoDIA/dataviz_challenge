@@ -1,33 +1,49 @@
-import { onMount } from 'solid-js'
-import { Chart, Title, Tooltip, Legend, Colors } from 'chart.js'
-import { Line } from 'solid-chartjs'
+import { onMount, createSignal, createResource } from 'solid-js';
+import { Chart, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale } from 'chart.js';
+import { Line } from 'solid-chartjs';
 
-export function MyChart  () {
-    /**
-     * You must register optional elements before using the chart,
-     * otherwise you will have the most primitive UI
-     */
+export function MyChart() {
+    // Register chart components
     onMount(() => {
-        Chart.register(Title, Tooltip, Legend, Colors)
-    })
+        Chart.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale);
+    });
 
-    const chartData = {
-        labels: ['January', 'February', 'March', 'April', 'May'],
+    // State for API data
+    const [data, setData] = createSignal([]);
+
+    // Fetch data from API
+    async function fetchData() {
+        try {
+            const response = await fetch('https://dataviz-challenge-api.azurewebsites.net/api/prod/');
+            const jsonData = await response.json();
+            setData(jsonData);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    // Fetch data on component mount
+    onMount(fetchData);
+
+    // Prepare chart data
+    const chartData = () => ({
+        labels: data().map(item => item.year),
         datasets: [
             {
-                label: 'Sales',
-                data: [50, 60, 70, 80, 90],
+                label: 'Value',
+                data: data().map(item => item.value),
             },
         ],
-    }
+    });
+
     const chartOptions = {
         responsive: true,
         maintainAspectRatio: false,
-    }
+    };
 
     return (
         <div>
-            <Line data={chartData} options={chartOptions} width={500} height={500} />
+            <Line data={chartData()} options={chartOptions} width={500} height={500} />
         </div>
-    )
+    );
 }
