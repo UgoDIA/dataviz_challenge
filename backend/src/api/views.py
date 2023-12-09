@@ -18,7 +18,8 @@ def vp_elec(request):
                 data.append({
                     'libelle_commune': row['libellé commune'],
                     'year': int(year_field),
-                    'vp_elec': int(row[year_field])
+                    'vp_elec': int(row[year_field]),
+                    'code': row['code commune'],
                 })
 
     filtered_data = data
