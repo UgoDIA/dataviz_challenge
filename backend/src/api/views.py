@@ -7,7 +7,7 @@ from django.http import JsonResponse
 
 @api_view(['GET'])
 def vp_elec(request):
-    libelle_commune = request.query_params.get('libelle_commune', None)
+    libelle_commune = request.query_params.get('name', None)
     year = request.query_params.get('year', None)
 
     data = []
@@ -16,16 +16,16 @@ def vp_elec(request):
         for row in csv_reader:
             for year_field in ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']:
                 data.append({
-                    'libelle_commune': row['libellé commune'],
+                    'name': row['libellé commune'],
                     'year': int(year_field),
-                    'vp_elec': int(row[year_field]),
+                    'value': int(row[year_field]),
                     'code': row['code commune'],
                 })
 
     filtered_data = data
 
     if libelle_commune:
-        filtered_data = [item for item in filtered_data if item['libelle_commune'] == libelle_commune]
+        filtered_data = [item for item in filtered_data if item['name'] == libelle_commune]
 
     if year:
         filtered_data = [item for item in filtered_data if item.get('year') == int(year)]

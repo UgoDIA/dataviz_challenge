@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 class vp_elec_serializers(serializers.Serializer):
-    libelle_commune = serializers.CharField()
+    name = serializers.CharField()
     year = serializers.IntegerField()
-    vp_elec = serializers.IntegerField()
+    value = serializers.IntegerField()
     code = serializers.IntegerField()
