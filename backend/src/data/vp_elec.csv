@@ -1,25 +1,25 @@
 libellé commune,catégorie,code commune,énergie,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010
-BRAS-PANON,VP,97402,Electrique et hydrogène,29,33,10,5,0,1,0,1,0,0,0,0,0
-CILAOS,VP,97424,Electrique et hydrogène,8,13,4,0,1,1,0,0,0,0,0,0,0
-ENTRE-DEUX,VP,97403,Electrique et hydrogène,28,16,5,1,4,1,0,2,0,0,0,0,0
-LA PLAINE-DES-PALMISTES,VP,97406,Electrique et hydrogène,17,11,6,2,4,1,1,0,0,0,0,0,0
-LA POSSESSION,VP,97408,Electrique et hydrogène,116,70,38,20,17,6,3,3,1,1,0,0,0
-LE PORT,VP,97407,Electrique et hydrogène,127,95,51,28,20,29,6,11,5,3,0,1,0
-LE TAMPON,VP,97422,Electrique et hydrogène,297,201,103,56,35,15,7,11,1,0,0,0,0
-LES AVIRONS,VP,97401,Electrique et hydrogène,55,34,22,10,2,4,2,1,1,0,0,0,0
-LES TROIS-BASSINS,VP,97423,Electrique et hydrogène,14,11,4,2,2,1,0,1,0,0,0,0,0
-L'ÉTANG-SALÉ,VP,97404,Electrique et hydrogène,62,43,30,14,7,5,3,1,0,0,0,0,0
-PETITE-ÎLE,VP,97405,Electrique et hydrogène,48,35,15,7,5,2,3,0,0,0,0,0,0
-SAINT-ANDRÉ,VP,97409,Electrique et hydrogène,108,110,35,24,12,8,4,0,0,0,0,0,0
-SAINT-BENOÎT,VP,97410,Electrique et hydrogène,89,72,35,23,4,11,2,2,0,0,1,0,0
-SAINT-DENIS,VP,97411,Electrique et hydrogène,631,685,271,110,93,51,37,29,22,4,2,2,0
-SAINTE-MARIE,VP,97418,Electrique et hydrogène,219,99,44,15,11,12,3,6,2,0,0,1,0
-SAINTE-ROSE,VP,97419,Electrique et hydrogène,7,7,4,0,0,0,0,0,0,0,0,0,0
-SAINTE-SUZANNE,VP,97420,Electrique et hydrogène,65,38,25,7,5,4,1,1,3,0,0,0,0
-SAINT-JOSEPH,VP,97412,Electrique et hydrogène,86,77,20,9,6,6,2,7,0,0,0,0,0
-SAINT-LEU,VP,97413,Electrique et hydrogène,108,81,37,24,18,7,2,2,4,0,0,0,0
-SAINT-LOUIS,VP,97414,Electrique et hydrogène,82,67,41,22,11,8,3,1,0,0,0,0,0
-SAINT-PAUL,VP,97415,Electrique et hydrogène,287,197,126,58,27,37,18,12,4,0,1,2,0
-SAINT-PHILIPPE,VP,97417,Electrique et hydrogène,10,5,2,3,0,0,1,0,0,0,0,0,0
-SAINT-PIERRE,VP,97416,Electrique et hydrogène,310,272,118,77,48,44,9,9,7,2,0,0,0
-SALAZIE,VP,97421,Electrique et hydrogène,5,4,1,1,0,2,0,1,0,0,0,0,0
+BRAS-PANON,VP,97402,Electrique et hydrogène,29,33,10,5,,1,,1,,,,,
+CILAOS,VP,97424,Electrique et hydrogène,8,13,4,,1,1,,,,,,,
+ENTRE-DEUX,VP,97403,Electrique et hydrogène,28,16,5,1,4,1,,2,,,,,
+LA PLAINE-DES-PALMISTES,VP,97406,Electrique et hydrogène,17,11,6,2,4,1,1,,,,,,
+LA POSSESSION,VP,97408,Electrique et hydrogène,116,70,38,20,17,6,3,3,1,1,,,
+LE PORT,VP,97407,Electrique et hydrogène,127,95,51,28,20,29,6,11,5,3,,1,
+LE TAMPON,VP,97422,Electrique et hydrogène,297,201,103,56,35,15,7,11,1,,,,
+LES AVIRONS,VP,97401,Electrique et hydrogène,55,34,22,10,2,4,2,1,1,,,,
+LES TROIS-BASSINS,VP,97423,Electrique et hydrogène,14,11,4,2,2,1,,1,,,,,
+L'ÉTANG-SALÉ,VP,97404,Electrique et hydrogène,62,43,30,14,7,5,3,1,,,,,
+PETITE-ÎLE,VP,97405,Electrique et hydrogène,48,35,15,7,5,2,3,,,,,,
+SAINT-ANDRÉ,VP,97409,Electrique et hydrogène,108,110,35,24,12,8,4,,,,,,
+SAINT-BENOÎT,VP,97410,Electrique et hydrogène,89,72,35,23,4,11,2,2,,,1,,
+SAINT-DENIS,VP,97411,Electrique et hydrogène,631,685,271,110,93,51,37,29,22,4,2,2,
+SAINTE-MARIE,VP,97418,Electrique et hydrogène,219,99,44,15,11,12,3,6,2,,,1,
+SAINTE-ROSE,VP,97419,Electrique et hydrogène,7,7,4,,,,,,,,,,
+SAINTE-SUZANNE,VP,97420,Electrique et hydrogène,65,38,25,7,5,4,1,1,3,,,,
+SAINT-JOSEPH,VP,97412,Electrique et hydrogène,86,77,20,9,6,6,2,7,,,,,
+SAINT-LEU,VP,97413,Electrique et hydrogène,108,81,37,24,18,7,2,2,4,,,,
+SAINT-LOUIS,VP,97414,Electrique et hydrogène,82,67,41,22,11,8,3,1,,,,,
+SAINT-PAUL,VP,97415,Electrique et hydrogène,287,197,126,58,27,37,18,12,4,,1,2,
+SAINT-PHILIPPE,VP,97417,Electrique et hydrogène,10,5,2,3,,,1,,,,,,
+SAINT-PIERRE,VP,97416,Electrique et hydrogène,310,272,118,77,48,44,9,9,7,2,,,
+SALAZIE,VP,97421,Electrique et hydrogène,5,4,1,1,,2,,1,,,,,

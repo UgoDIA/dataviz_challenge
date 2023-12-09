@@ -1,13 +1,13 @@
 import csv
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers import vp_elec_serializers
+from api.serializers import *
 import json
 from django.http import JsonResponse
 
 @api_view(['GET'])
 def vp_elec(request):
-    libelle_commune = request.query_params.get('libelle_commune', None)
+    libelle_commune = request.query_params.get('name', None)
     year = request.query_params.get('year', None)
 
     data = []
@@ -15,11 +15,13 @@ def vp_elec(request):
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             for year_field in ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']:
+                value = row[year_field]
+                value = int(value) if value else None  # Convert empty string to None
                 data.append({
                     'libelle_commune': row['libellé commune'],
                     'year': int(year_field),
-                    'vp_elec': int(row[year_field]),
-                    'code': row['code commune'],
+                    'value': value,
+                    'code': int(row['code commune']),
                 })
 
     filtered_data = data
@@ -51,3 +53,19 @@ def geo_json(request):
         return JsonResponse({"error": "JSON file not found"}, status=404)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+    
+
+@api_view(['GET'])
+def prod(request):
+    data = []
+    with open('data/linear_prod.csv', 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            data.append({
+                'year': int(row['Year']),
+                'value': float(row['Total Production (MWh)'])
+            })
+
+    serializer = prod_serializers(data, many=True)
+
+    return Response(serializer.data)
