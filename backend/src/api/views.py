@@ -69,3 +69,19 @@ def prod(request):
     serializer = prod_serializers(data, many=True)
 
     return Response(serializer.data)
+
+@api_view(['GET'])
+def conso(request):
+    data = []
+    with open('data/linear_conso.csv', 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            data.append({
+                'year': int(row['Année']),
+                'value': float(row['Consommation (MWh)']),
+                'commune' : str(row['Commune'])
+            })
+
+    serializer = conso_serializers(data, many=True)
+
+    return Response(serializer.data)
