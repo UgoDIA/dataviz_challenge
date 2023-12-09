@@ -1,7 +1,7 @@
 import csv
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers import vp_elec_serializers
+from api.serializers import *
 import json
 from django.http import JsonResponse
 
@@ -51,3 +51,19 @@ def geo_json(request):
         return JsonResponse({"error": "JSON file not found"}, status=404)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+    
+
+@api_view(['GET'])
+def prod(request):
+    data = []
+    with open('data/linear_prod.csv', 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            data.append({
+                'year': int(row['Year']),
+                'value': float(row['Total Production (MWh)'])
+            })
+
+    serializer = prod_serializers(data, many=True)
+
+    return Response(serializer.data)

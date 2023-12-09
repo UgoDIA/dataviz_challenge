@@ -5,3 +5,7 @@ class vp_elec_serializers(serializers.Serializer):
     year = serializers.IntegerField()
     value = serializers.IntegerField()
     code = serializers.IntegerField()
+
+class prod_serializers(serializers.Serializer):
+    year = serializers.IntegerField()
+    value = serializers.IntegerField()
