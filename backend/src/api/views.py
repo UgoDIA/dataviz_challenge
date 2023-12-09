@@ -15,11 +15,13 @@ def vp_elec(request):
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             for year_field in ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']:
+                value = row[year_field]
+                value = int(value) if value else None  # Convert empty string to None
                 data.append({
                     'libelle_commune': row['libellé commune'],
                     'year': int(year_field),
-                    'value': int(row[year_field]),
-                    'code': row['code commune'],
+                    'value': value,
+                    'code': int(row['code commune']),
                 })
 
     filtered_data = data
