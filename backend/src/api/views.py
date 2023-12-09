@@ -16,7 +16,7 @@ def vp_elec(request):
         for row in csv_reader:
             for year_field in ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']:
                 data.append({
-                    'name': row['libellé commune'],
+                    'libelle_commune': row['libellé commune'],
                     'year': int(year_field),
                     'value': int(row[year_field]),
                     'code': row['code commune'],
@@ -25,7 +25,7 @@ def vp_elec(request):
     filtered_data = data
 
     if libelle_commune:
-        filtered_data = [item for item in filtered_data if item['name'] == libelle_commune]
+        filtered_data = [item for item in filtered_data if item['libelle_commune'] == libelle_commune]
 
     if year:
         filtered_data = [item for item in filtered_data if item.get('year') == int(year)]
