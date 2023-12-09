@@ -14,22 +14,12 @@ def vp_elec(request):
     with open('data/vp_elec.csv', 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
-            data.append({
-                'libelle_commune': row['libellé commune'],
-                'year_2022': int(row['2022']),
-                'year_2021': int(row['2021']),
-                'year_2020': int(row['2020']),
-                'year_2019': int(row['2019']),
-                'year_2018': int(row['2018']),
-                'year_2017': int(row['2017']),
-                'year_2016': int(row['2016']),
-                'year_2015': int(row['2015']),
-                'year_2014': int(row['2014']),
-                'year_2013': int(row['2013']),
-                'year_2012': int(row['2012']),
-                'year_2011': int(row['2011']),
-                'year_2010': int(row['2010']),
-            })
+            for year_field in ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']:
+                data.append({
+                    'libelle_commune': row['libellé commune'],
+                    'year': int(year_field),
+                    'vp_elec': int(row[year_field])
+                })
 
     filtered_data = data
 
@@ -37,7 +27,7 @@ def vp_elec(request):
         filtered_data = [item for item in filtered_data if item['libelle_commune'] == libelle_commune]
 
     if year:
-        filtered_data = [item for item in filtered_data if item.get(f'year_{year}')]
+        filtered_data = [item for item in filtered_data if item.get('year') == int(year)]
 
     if not filtered_data:
         return Response({"error": "No data found for the provided parameters"}, status=404)
